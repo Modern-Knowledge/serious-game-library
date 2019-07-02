@@ -1,7 +1,7 @@
 {
   "name": "serious-game-library",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library for serious game",
   "keywords": [],
   "main": "dist/serious-game-library.umd.js",
   "module": "dist/serious-game-library.es5.js",
@@ -12,7 +12,7 @@
   "author": "Modern Knowledge",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://gitlab.com/modern-knowledge/bachelorarbeit/serious-game-library"
   },
   "license": "MIT",
   "engines": {
@@ -26,13 +26,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [

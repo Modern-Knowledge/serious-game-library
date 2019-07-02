@@ -1,22 +1,39 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
     "target": "es5",
-    "module":"es2015",
-    "lib": ["es2015", "es2016", "es2017", "dom"],
-    "strict": true,
-    "sourceMap": true,
+    "module": "es2015",
+    "lib": ["es2015", "es2016", "dom"],
+    "allowJs": false,
+    "checkJs": false,
     "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "declarationDir": "dist/types",
+    "sourceMap": true,
     "outDir": "dist/lib",
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": false,
+
+    "declarationDir": "dist/types",
+
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }
