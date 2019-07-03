@@ -4,13 +4,14 @@ import sourceMaps from 'rollup-plugin-sourcemaps'
 import camelCase from 'lodash.camelcase'
 import typescript from 'rollup-plugin-typescript2'
 import json from 'rollup-plugin-json'
+import multiEntry from "rollup-plugin-multi-entry";
 
 const pkg = require('./package.json')
 
 const libraryName = 'serious-game-library'
 
 export default {
-  input: `src/${libraryName}.ts`,
+  input: 'dist/lib/**/*.js',
   output: [
     { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
     { file: pkg.module, format: 'es', sourcemap: true },
@@ -18,7 +19,7 @@ export default {
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: [],
   watch: {
-    include: 'src/**',
+    include: 'src/**/*.js',
   },
   plugins: [
     // Allow json resolution
@@ -31,6 +32,7 @@ export default {
     // which external modules to include in the bundle
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
     resolve(),
+    multiEntry(),
 
     // Resolve source maps to the original source
     sourceMaps(),
