@@ -50,10 +50,6 @@ echo "Cleaning up serious-game-backend..."
 rm -rf $backendDir/src/lib
 
 echo "-----------------------"
-echo "4. Initializing Directory Structure"
-echo "-----------------------"
-
-echo "-----------------------"
 echo "4. Linkage"
 echo "-----------------------"
 
