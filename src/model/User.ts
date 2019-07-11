@@ -1,15 +1,12 @@
-export default class User {
-  private _name: string;
+import { Model } from "./Model";
 
-  constructor(name: string) {
-    this._name = name;
+export default class User implements Model<User> {
+  public fromMySQL(result: any): void {
+    console.log(result);
   }
 
-  get name(): string {
-    return this._name;
+  getParamArray(): string[] {
+    return [];
   }
 
-  set name(value: string) {
-    this._name = value;
-  }
 }
