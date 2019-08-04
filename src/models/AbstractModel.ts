@@ -1,3 +1,7 @@
+/**
+ * base model for all entities
+ * contains attributes that all entities have in common
+ */
 export abstract class AbstractModel {
   private _id: number;
   private _createdAt: Date;
@@ -6,9 +10,6 @@ export abstract class AbstractModel {
   protected constructor() {
     this._createdAt = new Date();
   }
-
-  abstract fromMySQL(result: any): void;
-  abstract getParamArray(): string[];
 
   get id(): number {
     return this._id;
