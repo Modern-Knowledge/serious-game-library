@@ -9,14 +9,6 @@ export class Log extends AbstractModel {
     super();
   }
 
-  fromMySQL(result: any): void {
-    console.log(result);
-  }
-
-  getParamArray(): string[] {
-    return [];
-  }
-
   get logLevel(): string {
     return this._logLevel;
   }

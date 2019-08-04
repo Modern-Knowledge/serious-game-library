@@ -13,15 +13,6 @@ export class User extends AbstractModel {
     super();
   }
 
-  public fromMySQL(result: any): void {
-    console.log(result);
-  }
-
-  getParamArray(): string[] {
-    return [];
-  }
-
-
   get username(): string {
     return this._username;
   }
