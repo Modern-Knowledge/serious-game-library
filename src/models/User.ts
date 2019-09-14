@@ -8,6 +8,7 @@ export class User extends AbstractModel {
   private _lastname: string;
   private _lastLogin: Date;
   private _failedLoginAttempts: number;
+  private _loginCoolDown: Date;
   private _status: Status;
 
   public constructor() {
@@ -60,6 +61,14 @@ export class User extends AbstractModel {
 
   set failedLoginAttempts(value: number) {
     this._failedLoginAttempts = value;
+  }
+
+  get loginCoolDown(): Date {
+    return this._loginCoolDown;
+  }
+
+  set loginCoolDown(value: Date) {
+    this._loginCoolDown = value;
   }
 
   get status(): Status {
