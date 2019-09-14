@@ -1,4 +1,5 @@
 import { AbstractModel } from "./AbstractModel";
+import {User} from "./User";
 
 export class Log extends AbstractModel {
   private _logger: string;
@@ -6,8 +7,11 @@ export class Log extends AbstractModel {
   private _method: string;
   private _message: string;
   private _params: string[];
+  private _userId: number;
 
-  constructor() {
+  private _user: User;
+
+  public constructor() {
     super();
   }
 
@@ -49,5 +53,21 @@ export class Log extends AbstractModel {
 
   set params(value: string[]) {
     this._params = value;
+  }
+
+  get userId(): number {
+    return this._userId;
+  }
+
+  set userId(value: number) {
+    this._userId = value;
+  }
+
+  get user(): User {
+    return this._user;
+  }
+
+  set user(value: User) {
+    this._user = value;
   }
 }

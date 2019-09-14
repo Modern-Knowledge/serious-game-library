@@ -1,24 +1,25 @@
 import { AbstractModel } from "./AbstractModel";
-import { Role } from "../enums/Role";
 import { Status } from "../enums/Status";
 
 export class User extends AbstractModel {
-  private _username: string;
+  private _email: string;
   private _password: string;
-  private _status: Status;
-  private _role: Role;
+  private _forename: string;
+  private _lastname: string;
   private _lastLogin: Date;
+  private _failedLoginAttempts: number;
+  private _status: Status;
 
-  constructor() {
+  public constructor() {
     super();
   }
 
-  get username(): string {
-    return this._username;
+  get email(): string {
+    return this._email;
   }
 
-  set username(value: string) {
-    this._username = value;
+  set email(value: string) {
+    this._email = value;
   }
 
   get password(): string {
@@ -29,6 +30,22 @@ export class User extends AbstractModel {
     this._password = value;
   }
 
+  get forename(): string {
+    return this._forename;
+  }
+
+  set forename(value: string) {
+    this._forename = value;
+  }
+
+  get lastname(): string {
+    return this._lastname;
+  }
+
+  set lastname(value: string) {
+    this._lastname = value;
+  }
+
   get lastLogin(): Date {
     return this._lastLogin;
   }
@@ -37,5 +54,19 @@ export class User extends AbstractModel {
     this._lastLogin = value;
   }
 
+  get failedLoginAttempts(): number {
+    return this._failedLoginAttempts;
+  }
 
+  set failedLoginAttempts(value: number) {
+    this._failedLoginAttempts = value;
+  }
+
+  get status(): Status {
+    return this._status;
+  }
+
+  set status(value: Status) {
+    this._status = value;
+  }
 }
