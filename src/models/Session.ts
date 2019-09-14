@@ -2,6 +2,7 @@ import {AbstractModel} from "./AbstractModel";
 import Game from "./Game";
 import {Patient} from "./Patient";
 import {Therapist} from "./Therapist";
+import GameSetting from "./GameSetting";
 
 export default class Session extends AbstractModel {
 
@@ -15,7 +16,7 @@ export default class Session extends AbstractModel {
     private _game: Game;
     private _patient: Patient;
     private _therapist: Therapist;
-    private _session: Session;
+    private _gameSetting: GameSetting;
 
     constructor() {
         super();
@@ -93,11 +94,11 @@ export default class Session extends AbstractModel {
         this._therapist = value;
     }
 
-    get session(): Session {
-        return this._session;
+    get gameSetting(): GameSetting {
+        return this._gameSetting;
     }
 
-    set session(value: Session) {
-        this._session = value;
+    set gameSetting(value: GameSetting) {
+        this._gameSetting = value;
     }
 }
