@@ -1,6 +1,6 @@
-import {AbstractModel} from "./AbstractModel";
+import { AbstractModel } from "./AbstractModel";
 
-export default class Statistic extends AbstractModel {
+export class Statistic extends AbstractModel {
     private _startTime: Date;
     private _endTime: Date;
     private _errors: number;

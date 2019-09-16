@@ -1,4 +1,4 @@
-import {AbstractModel} from "./AbstractModel";
+import { AbstractModel } from "./AbstractModel";
 
 export default class Image extends AbstractModel {
 
@@ -7,7 +7,7 @@ export default class Image extends AbstractModel {
     constructor() {
         super();
     }
-    
+
     get image(): any {
         return this._image;
     }

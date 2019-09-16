@@ -1,8 +1,8 @@
-import {AbstractModel} from "./AbstractModel";
-import Game from "./Game";
-import {Patient} from "./Patient";
-import {Therapist} from "./Therapist";
-import GameSetting from "./GameSetting";
+import { AbstractModel } from "./AbstractModel";
+import { Game } from "./Game";
+import { Patient } from "./Patient";
+import { Therapist } from "./Therapist";
+import { GameSetting } from "./GameSetting";
 
 export default class Session extends AbstractModel {
 

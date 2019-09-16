@@ -1,8 +1,8 @@
-import {AbstractModel} from "./AbstractModel";
-import {Difficulty} from "../enums/Difficulty";
-import Game from "./Game";
+import { AbstractModel } from "./AbstractModel";
+import { Difficulty } from "../enums/Difficulty";
+import { Game } from "./Game";
 
-export default class GameSetting extends AbstractModel {
+export class GameSetting extends AbstractModel {
 
     private _gamesId: number;
     private _difficulty: Difficulty;
@@ -12,7 +12,7 @@ export default class GameSetting extends AbstractModel {
     constructor() {
         super();
     }
-    
+
     get gamesId(): number {
         return this._gamesId;
     }

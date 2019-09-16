@@ -1,6 +1,6 @@
 import { User } from "./User";
-import {Therapist} from "./Therapist";
-import PatientSetting from "./PatientSetting";
+import { Therapist } from "./Therapist";
+import { PatientSetting } from "./PatientSetting";
 
 export class Patient extends User {
     private _birthday: Date;
@@ -49,7 +49,7 @@ export class Patient extends User {
     public addTherapist(therapist: Therapist): void {
         this._therapists.push(therapist);
     }
-    
+
     get patientSetting(): PatientSetting {
         return this._patientSetting;
     }

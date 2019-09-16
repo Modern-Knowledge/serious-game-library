@@ -1,7 +1,7 @@
-import {AbstractModel} from "./AbstractModel";
-import Game from "./Game";
+import { AbstractModel } from "./AbstractModel";
+import { Game } from "./Game";
 
-export default class Helptext extends AbstractModel {
+export class Helptext extends AbstractModel {
 
     private _text: string;
 

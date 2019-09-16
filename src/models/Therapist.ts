@@ -1,5 +1,5 @@
 import { User } from "./User";
-import {Patient} from "./Patient";
+import { Patient } from "./Patient";
 
 export class Therapist extends User {
     private _patients: Patient[] = [];

@@ -1,6 +1,6 @@
-import {AbstractModel} from "./AbstractModel";
+import { AbstractModel } from "./AbstractModel";
 
-export default class Word extends AbstractModel {
+export class Word extends AbstractModel {
     private _name: string;
 
     constructor() {

@@ -1,7 +1,7 @@
-import {AbstractModel} from "./AbstractModel";
+import { AbstractModel } from "./AbstractModel";
 
-export default class AppSetting extends AbstractModel {
-    
+export class AppSetting extends AbstractModel {
+
     constructor() {
         super();
     }

@@ -1,5 +1,5 @@
 import { AbstractModel } from "./AbstractModel";
-import {User} from "./User";
+import { User } from "./User";
 
 export class Log extends AbstractModel {
   private _logger: string;

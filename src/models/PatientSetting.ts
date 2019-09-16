@@ -1,6 +1,6 @@
-import {AbstractModel} from "./AbstractModel";
+import { AbstractModel } from "./AbstractModel";
 
-export default class PatientSetting extends AbstractModel {
+export class PatientSetting extends AbstractModel {
 
     private _hasNeglect: boolean;
 
