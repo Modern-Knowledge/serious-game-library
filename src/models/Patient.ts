@@ -7,7 +7,7 @@ export class Patient extends User {
     private _info: string;
     private _patientSettingsId: number;
 
-    private _therapists: Therapist[] = [];
+    private _therapists: Therapist[] = undefined;
     private _patientSetting: PatientSetting;
 
     public constructor() {

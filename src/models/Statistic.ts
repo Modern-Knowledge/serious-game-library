@@ -5,7 +5,7 @@ export class Statistic extends AbstractModel {
     private _endTime: Date;
     private _errors: number;
 
-    constructor() {
+    public constructor() {
         super();
     }
 

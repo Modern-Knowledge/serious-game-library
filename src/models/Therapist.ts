@@ -2,7 +2,11 @@ import { User } from "./User";
 import { Patient } from "./Patient";
 
 export class Therapist extends User {
-    private _patients: Patient[] = [];
+    private _patients: Patient[] = undefined;
+
+    public constructor() {
+        super();
+    }
 
     get patients(): Patient[] {
         return this._patients;

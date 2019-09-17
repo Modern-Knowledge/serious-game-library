@@ -1,13 +1,11 @@
 import { AbstractModel } from "./AbstractModel";
-import { Game } from "./Game";
 
 export class Helptext extends AbstractModel {
 
+    private _name: string;
     private _text: string;
 
-    private _games: Game[] = [];
-
-    constructor() {
+    public constructor() {
         super();
     }
 
@@ -19,15 +17,11 @@ export class Helptext extends AbstractModel {
         this._text = value;
     }
 
-    get games(): Game[] {
-        return this._games;
+    get name(): string {
+        return this._name;
     }
 
-    set games(value: Game[]) {
-        this._games = value;
-    }
-
-    public addGame(game: Game): void {
-        this._games.push(game);
+    set name(value: string) {
+        this._name = value;
     }
 }

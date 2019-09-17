@@ -2,7 +2,7 @@ import { AbstractModel } from "./AbstractModel";
 
 export class AppSetting extends AbstractModel {
 
-    constructor() {
+    public constructor() {
         super();
     }
 }

@@ -3,7 +3,7 @@ import { AbstractModel } from "./AbstractModel";
 export class Word extends AbstractModel {
     private _name: string;
 
-    constructor() {
+    public constructor() {
         super();
     }
 

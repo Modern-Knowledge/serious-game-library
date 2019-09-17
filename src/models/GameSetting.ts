@@ -5,11 +5,12 @@ import { Game } from "./Game";
 export class GameSetting extends AbstractModel {
 
     private _gamesId: number;
-    private _difficulty: Difficulty;
+    private _difficultyId: number;
 
-    private _game: Game;
+    private _difficulty: Difficulty = undefined;
+    private _game: Game = undefined;
 
-    constructor() {
+    public constructor() {
         super();
     }
 
@@ -35,5 +36,13 @@ export class GameSetting extends AbstractModel {
 
     set game(value: Game) {
         this._game = value;
+    }
+
+    get difficultyId(): number {
+        return this._difficultyId;
+    }
+
+    set difficultyId(value: number) {
+        this._difficultyId = value;
     }
 }

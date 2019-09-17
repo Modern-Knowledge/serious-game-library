@@ -4,12 +4,12 @@ import { Helptext } from "./Helptext";
 export class Game extends AbstractModel {
 
     private _name: string;
-    private _text: string;
+    private _description: string;
 
     // todo: refactor to map, easier to get right helptext
     private _helptexts: Helptext[] = [];
 
-    constructor() {
+    public constructor() {
         super();
     }
 
@@ -21,12 +21,12 @@ export class Game extends AbstractModel {
         this._name = value;
     }
 
-    get text(): string {
-        return this._text;
+    get description(): string {
+        return this._description;
     }
 
-    set text(value: string) {
-        this._text = value;
+    set description(value: string) {
+        this._description = value;
     }
 
     get helptexts(): Helptext[] {

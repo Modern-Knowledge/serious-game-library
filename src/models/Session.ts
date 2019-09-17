@@ -13,12 +13,12 @@ export default class Session extends AbstractModel {
     private _gameSettingsId: number;
     private _date: Date;
 
-    private _game: Game;
-    private _patient: Patient;
-    private _therapist: Therapist;
-    private _gameSetting: GameSetting;
+    private _game: Game = undefined;
+    private _patient: Patient = undefined;
+    private _therapist: Therapist = undefined;
+    private _gameSetting: GameSetting = undefined;
 
-    constructor() {
+    public constructor() {
         super();
     }
 

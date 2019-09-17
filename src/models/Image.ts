@@ -4,7 +4,7 @@ export default class Image extends AbstractModel {
 
     private _image: any;
 
-    constructor() {
+    public constructor() {
         super();
     }
 

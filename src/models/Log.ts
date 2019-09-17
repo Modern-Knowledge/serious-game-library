@@ -9,7 +9,7 @@ export class Log extends AbstractModel {
   private _params: string[];
   private _userId: number;
 
-  private _user: User;
+  private _user: User = undefined;
 
   public constructor() {
     super();
