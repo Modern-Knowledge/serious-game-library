@@ -5,10 +5,9 @@ import { PatientSetting } from "./PatientSetting";
 export class Patient extends User {
     private _birthday: Date;
     private _info: string;
-    private _patientSettingsId: number;
 
-    private _therapists: Therapist[] = undefined;
-    private _patientSetting: PatientSetting;
+    private _therapists: Therapist[] = [];
+    private _patientSetting: PatientSetting = undefined;
 
     public constructor() {
         super();
@@ -28,14 +27,6 @@ export class Patient extends User {
 
     set info(value: string) {
         this._info = value;
-    }
-
-    get patientSettingsId(): number {
-        return this._patientSettingsId;
-    }
-
-    set patientSettingsId(value: number) {
-        this._patientSettingsId = value;
     }
 
     get therapists(): Therapist[] {

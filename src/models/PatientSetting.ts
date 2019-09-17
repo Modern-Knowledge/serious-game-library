@@ -5,8 +5,6 @@ export class PatientSetting extends AbstractModel {
     private _neglect: boolean;
     private _patientId: number;
 
-    private _patientSetting: PatientSetting;
-
     public constructor() {
         super();
     }
@@ -27,11 +25,4 @@ export class PatientSetting extends AbstractModel {
         this._patientId = value;
     }
 
-    get patientSetting(): PatientSetting {
-        return this._patientSetting;
-    }
-
-    set patientSetting(value: PatientSetting) {
-        this._patientSetting = value;
-    }
 }

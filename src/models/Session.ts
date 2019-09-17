@@ -6,11 +6,11 @@ import { GameSetting } from "./GameSetting";
 
 export default class Session extends AbstractModel {
 
-    private _gamesId: number;
-    private _patientsId: number;
-    private _statisticsId: number;
-    private _therapistsId: number;
-    private _gameSettingsId: number;
+    private _gameId: number;
+    private _patientId: number;
+    private _statisticId: number;
+    private _therapistId: number;
+    private _gameSettingId: number;
     private _date: Date;
 
     private _game: Game = undefined;
@@ -22,44 +22,44 @@ export default class Session extends AbstractModel {
         super();
     }
 
-    get gamesId(): number {
-        return this._gamesId;
+    get gameId(): number {
+        return this._gameId;
     }
 
-    set gamesId(value: number) {
-        this._gamesId = value;
+    set gameId(value: number) {
+        this._gameId = value;
     }
 
-    get patientsId(): number {
-        return this._patientsId;
+    get patientId(): number {
+        return this._patientId;
     }
 
-    set patientsId(value: number) {
-        this._patientsId = value;
+    set patientId(value: number) {
+        this._patientId = value;
     }
 
-    get statisticsId(): number {
-        return this._statisticsId;
+    get statisticId(): number {
+        return this._statisticId;
     }
 
-    set statisticsId(value: number) {
-        this._statisticsId = value;
+    set statisticId(value: number) {
+        this._statisticId = value;
     }
 
-    get therapistsId(): number {
-        return this._therapistsId;
+    get therapistId(): number {
+        return this._therapistId;
     }
 
-    set therapistsId(value: number) {
-        this._therapistsId = value;
+    set therapistId(value: number) {
+        this._therapistId = value;
     }
 
-    get gameSettingsId(): number {
-        return this._gameSettingsId;
+    get gameSettingId(): number {
+        return this._gameSettingId;
     }
 
-    set gameSettingsId(value: number) {
-        this._gameSettingsId = value;
+    set gameSettingId(value: number) {
+        this._gameSettingId = value;
     }
 
     get date(): Date {

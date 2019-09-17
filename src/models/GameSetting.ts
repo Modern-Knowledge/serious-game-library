@@ -4,7 +4,7 @@ import { Game } from "./Game";
 
 export class GameSetting extends AbstractModel {
 
-    private _gamesId: number;
+    private _gameId: number;
     private _difficultyId: number;
 
     private _difficulty: Difficulty = undefined;
@@ -14,12 +14,12 @@ export class GameSetting extends AbstractModel {
         super();
     }
 
-    get gamesId(): number {
-        return this._gamesId;
+    get gameId(): number {
+        return this._gameId;
     }
 
-    set gamesId(value: number) {
-        this._gamesId = value;
+    set gameId(value: number) {
+        this._gameId = value;
     }
 
     get difficulty(): Difficulty {

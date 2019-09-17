@@ -1,9 +1,11 @@
 import { AbstractModel } from "./AbstractModel";
+import {Errortext} from "./Errortext";
 
 export class Statistic extends AbstractModel {
     private _startTime: Date;
     private _endTime: Date;
-    private _errors: number;
+
+    private _errortexts: Errortext[] = [];
 
     public constructor() {
         super();
@@ -25,11 +27,15 @@ export class Statistic extends AbstractModel {
         this._endTime = value;
     }
 
-    get errors(): number {
-        return this._errors;
+    get errortexts(): Errortext[] {
+        return this._errortexts;
     }
 
-    set errors(value: number) {
-        this._errors = value;
+    set errortexts(value: Errortext[]) {
+        this._errortexts = value;
+    }
+
+    public addErrortext(errortext: Errortext) {
+        this._errortexts.push(errortext);
     }
 }

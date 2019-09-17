@@ -1,27 +1,8 @@
-import { AbstractModel } from "./AbstractModel";
+import {Text} from "./Text";
 
-export class Helptext extends AbstractModel {
-
-    private _name: string;
-    private _text: string;
+export class Helptext extends Text {
 
     public constructor() {
         super();
-    }
-
-    get text(): string {
-        return this._text;
-    }
-
-    set text(value: string) {
-        this._text = value;
-    }
-
-    get name(): string {
-        return this._name;
-    }
-
-    set name(value: string) {
-        this._name = value;
     }
 }
