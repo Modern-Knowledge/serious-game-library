@@ -1,5 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 import { Status } from "../enums/Status";
+import { Session } from "./Session";
 
 export class User extends AbstractModel {
   private _email: string;
@@ -10,6 +11,8 @@ export class User extends AbstractModel {
   private _failedLoginAttempts: number;
   private _loginCoolDown: Date;
   private _status: Status;
+
+  private _sessions: Session[] = [];
 
   public constructor() {
     super();
@@ -77,5 +80,21 @@ export class User extends AbstractModel {
 
   set status(value: Status) {
     this._status = value;
+  }
+
+  get sessions(): Session[] {
+    return this._sessions;
+  }
+
+  set sessions(value: Session[]) {
+    this._sessions = value;
+  }
+
+  public addSession(session: Session): void {
+    this._sessions.push(session);
+  }
+
+  public addSessions(sessions: Session[]): void {
+    this._sessions = this._sessions.concat(sessions);
   }
 }

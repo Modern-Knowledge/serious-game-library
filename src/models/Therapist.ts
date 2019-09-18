@@ -2,6 +2,7 @@ import { User } from "./User";
 import { Patient } from "./Patient";
 
 export class Therapist extends User {
+
     private _patients: Patient[] = [];
 
     public constructor() {
@@ -23,4 +24,5 @@ export class Therapist extends User {
     public addPatients(patients: Patient[]): void {
         this._patients = this._patients.concat(patients);
     }
+
 }

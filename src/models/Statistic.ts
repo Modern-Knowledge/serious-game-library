@@ -1,5 +1,5 @@
 import { AbstractModel } from "./AbstractModel";
-import {Errortext} from "./Errortext";
+import { Errortext } from "./Errortext";
 
 export class Statistic extends AbstractModel {
     private _startTime: Date;
@@ -37,5 +37,9 @@ export class Statistic extends AbstractModel {
 
     public addErrortext(errortext: Errortext) {
         this._errortexts.push(errortext);
+    }
+
+    public addErrortexts(errortexts: Errortext[]) {
+        this._errortexts = this._errortexts.concat(errortexts);
     }
 }

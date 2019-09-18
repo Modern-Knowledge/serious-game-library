@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export default class Image extends AbstractModel {
+export class Image extends AbstractModel {
 
     private _image: any;
 

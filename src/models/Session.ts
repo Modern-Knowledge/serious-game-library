@@ -3,8 +3,9 @@ import { Game } from "./Game";
 import { Patient } from "./Patient";
 import { Therapist } from "./Therapist";
 import { GameSetting } from "./GameSetting";
+import { Statistic } from "./Statistic";
 
-export default class Session extends AbstractModel {
+export class Session extends AbstractModel {
 
     private _gameId: number;
     private _patientId: number;
@@ -17,6 +18,7 @@ export default class Session extends AbstractModel {
     private _patient: Patient = undefined;
     private _therapist: Therapist = undefined;
     private _gameSetting: GameSetting = undefined;
+    private _statistic: Statistic = undefined;
 
     public constructor() {
         super();
@@ -100,5 +102,13 @@ export default class Session extends AbstractModel {
 
     set gameSetting(value: GameSetting) {
         this._gameSetting = value;
+    }
+
+    get statistic(): Statistic {
+        return this._statistic;
+    }
+
+    set statistic(value: Statistic) {
+        this._statistic = value;
     }
 }

@@ -1,5 +1,5 @@
-import {Text} from "./Text";
-import {Severity} from "../enums/Severity";
+import { Text } from "./Text";
+import { Severity } from "./Severity";
 
 export class Errortext extends Text {
     private _severityId: number;
