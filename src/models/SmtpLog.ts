@@ -1,14 +1,12 @@
 import { AbstractModel } from "./AbstractModel";
-import { SmtpCategory } from "./SmtpCategory";
+import { SmtpMessage } from "./SmtpMessage";
 
 export class SmtpLog extends AbstractModel {
     private _subject: string;
     private _body: string;
     private _rcptEmail: string;
     private _simulated: number;
-    private _smtpCategoryId: number;
-
-    private _smtpCategory: SmtpCategory;
+    private _sent: number;
 
     public constructor() {
         super();
@@ -46,19 +44,12 @@ export class SmtpLog extends AbstractModel {
         this._simulated = value;
     }
 
-    get smtpCategoryId(): number {
-        return this._smtpCategoryId;
+    get sent(): number {
+        return this._sent;
     }
 
-    set smtpCategoryId(value: number) {
-        this._smtpCategoryId = value;
+    set sent(value: number) {
+        this._sent = value;
     }
 
-    get smtpCategory(): SmtpCategory {
-        return this._smtpCategory;
-    }
-
-    set smtpCategory(value: SmtpCategory) {
-        this._smtpCategory = value;
-    }
 }
