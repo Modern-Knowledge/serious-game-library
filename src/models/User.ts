@@ -97,4 +97,18 @@ export class User extends AbstractModel {
   public addSessions(sessions: Session[]): void {
     this._sessions = this._sessions.concat(sessions);
   }
+
+  get fullName() {
+    return this.forename + " " + this.lastname;
+  }
+
+  /**
+   * return mail recipient from user
+   */
+  get recipient(): { address: string; name: string } {
+    return {
+      name: this.fullName,
+      address: this.email
+    };
+  }
 }
