@@ -35,9 +35,4 @@ export abstract class AbstractModel {
     this._modifiedAt = value;
   }
 
-  public equals(model: AbstractModel): boolean {
-    return this.id === model.id;
-  }
-
-
 }
