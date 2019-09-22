@@ -5,6 +5,7 @@
 
 import { AbstractModel } from "./AbstractModel";
 import { Difficulty } from "./Difficulty";
+import {Ingredient} from "./Ingredient";
 
 export class Recipe extends AbstractModel {
 
@@ -12,7 +13,8 @@ export class Recipe extends AbstractModel {
     private _description: string;
     private _difficultyId: number;
 
-    private _difficulty: Difficulty;
+    private _difficulty: Difficulty = undefined;
+    private _ingredients: Ingredient[] = [];
 
     public constructor() {
         super();
@@ -48,5 +50,13 @@ export class Recipe extends AbstractModel {
 
     set difficulty(value: Difficulty) {
         this._difficulty = value;
+    }
+
+    get ingredients(): Ingredient[] {
+        return this._ingredients;
+    }
+
+    set ingredients(value: Ingredient[]) {
+        this._ingredients = value;
     }
 }

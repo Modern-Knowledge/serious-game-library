@@ -17,12 +17,4 @@ export class Therapist extends User {
         this._patients = value;
     }
 
-    public addPatient(patient: Patient): void {
-        this._patients.push(patient);
-    }
-
-    public addPatients(patients: Patient[]): void {
-        this._patients = this._patients.concat(patients);
-    }
-
 }

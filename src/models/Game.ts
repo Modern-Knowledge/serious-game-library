@@ -39,14 +39,6 @@ export class Game extends AbstractModel {
         this._helptexts = value;
     }
 
-    public addHelptext(helptext: Helptext) {
-        this._helptexts.push(helptext);
-    }
-
-    public addHelptexts(helptexts: Helptext[]) {
-        this._helptexts = this._helptexts.concat(helptexts);
-    }
-
     get gameSettings(): GameSetting[] {
         return this._gameSettings;
     }
@@ -55,11 +47,4 @@ export class Game extends AbstractModel {
         this._gameSettings = value;
     }
 
-    public addGameSetting(gameSetting: GameSetting) {
-        this._gameSettings.push(gameSetting);
-    }
-
-    public addGameSettings(gameSettings: GameSetting[]) {
-        this._gameSettings = this._gameSettings.concat(gameSettings);
-    }
 }

@@ -90,14 +90,6 @@ export class User extends AbstractModel {
     this._sessions = value;
   }
 
-  public addSession(session: Session): void {
-    this._sessions.push(session);
-  }
-
-  public addSessions(sessions: Session[]): void {
-    this._sessions = this._sessions.concat(sessions);
-  }
-
   get fullName() {
     return this.forename + " " + this.lastname;
   }

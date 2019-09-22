@@ -1,5 +1,4 @@
 import { AbstractModel } from "./AbstractModel";
-import { SmtpMessage } from "./SmtpMessage";
 
 export class SmtpLog extends AbstractModel {
     private _subject: string;

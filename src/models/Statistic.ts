@@ -35,11 +35,4 @@ export class Statistic extends AbstractModel {
         this._errortexts = value;
     }
 
-    public addErrortext(errortext: Errortext) {
-        this._errortexts.push(errortext);
-    }
-
-    public addErrortexts(errortexts: Errortext[]) {
-        this._errortexts = this._errortexts.concat(errortexts);
-    }
 }
