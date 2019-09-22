@@ -1,28 +1,32 @@
-import { AbstractModel } from "./AbstractModel";
+import { AbstractModel } from './AbstractModel'
+import { Deserializable } from './Deserializable'
 
-export class PatientSetting extends AbstractModel {
+export class PatientSetting extends AbstractModel implements Deserializable {
+  private _neglect: boolean
+  private _patientId: number
 
-    private _neglect: boolean;
-    private _patientId: number;
+  public constructor() {
+    super()
+  }
 
-    public constructor() {
-        super();
-    }
+  public deserialize(input: any) {
+    Object.assign(this, input)
+    return this
+  }
 
-    get hasNeglect(): boolean {
-        return this._neglect;
-    }
+  get hasNeglect(): boolean {
+    return this._neglect
+  }
 
-    set neglect(value: boolean) {
-        this._neglect = value;
-    }
+  set neglect(value: boolean) {
+    this._neglect = value
+  }
 
-    get patientId(): number {
-        return this._patientId;
-    }
+  get patientId(): number {
+    return this._patientId
+  }
 
-    set patientId(value: number) {
-        this._patientId = value;
-    }
-
+  set patientId(value: number) {
+    this._patientId = value
+  }
 }

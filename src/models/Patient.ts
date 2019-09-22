@@ -1,37 +1,44 @@
-import { User } from "./User";
-import { PatientSetting } from "./PatientSetting";
+import { User } from './User'
+import { PatientSetting } from './PatientSetting'
+import { Deserializable } from './Deserializable'
 
-export class Patient extends User {
-    private _birthday: Date;
-    private _info: string;
+export class Patient extends User implements Deserializable {
+  private _birthday: Date
+  private _info: string
 
-    private _patientSetting: PatientSetting = undefined;
+  private _patientSetting: PatientSetting = undefined
 
-    public constructor() {
-        super();
-    }
+  public constructor() {
+    super()
+  }
 
-    get birthday(): Date {
-        return this._birthday;
-    }
+  public deserialize(input: any) {
+    Object.assign(this, input)
+    this.patientSetting = new PatientSetting().deserialize(input.patientSetting)
+    return this
+  }
 
-    set birthday(value: Date) {
-        this._birthday = value;
-    }
+  get birthday(): Date {
+    return this._birthday
+  }
 
-    get info(): string {
-        return this._info;
-    }
+  set birthday(value: Date) {
+    this._birthday = value
+  }
 
-    set info(value: string) {
-        this._info = value;
-    }
+  get info(): string {
+    return this._info
+  }
 
-    get patientSetting(): PatientSetting {
-        return this._patientSetting;
-    }
+  set info(value: string) {
+    this._info = value
+  }
 
-    set patientSetting(value: PatientSetting) {
-        this._patientSetting = value;
-    }
+  get patientSetting(): PatientSetting {
+    return this._patientSetting
+  }
+
+  set patientSetting(value: PatientSetting) {
+    this._patientSetting = value
+  }
 }
