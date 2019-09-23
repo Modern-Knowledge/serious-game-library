@@ -5,7 +5,7 @@
 
 import { AbstractModel } from "./AbstractModel";
 import { Difficulty } from "./Difficulty";
-import {Ingredient} from "./Ingredient";
+import { Ingredient } from "./Ingredient";
 
 export class Recipe extends AbstractModel {
 

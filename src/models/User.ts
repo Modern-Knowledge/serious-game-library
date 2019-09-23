@@ -1,17 +1,18 @@
 import { AbstractModel } from "./AbstractModel";
-import { Status } from "../enums/Status";
 import { Session } from "./Session";
 import { Deserializable } from "./Deserializable";
+import { Gender } from "../enums/Gender";
 
 export class User extends AbstractModel implements Deserializable {
   private _email: string;
   private _password: string;
   private _forename: string;
   private _lastname: string;
+  private _gender: number;
   private _lastLogin: Date;
   private _failedLoginAttempts: number;
   private _loginCoolDown: Date;
-  private _status: Status;
+  private _status: number;
 
   private _sessions: Session[] = [];
 
@@ -56,6 +57,14 @@ export class User extends AbstractModel implements Deserializable {
     this._lastname = value;
   }
 
+  get gender(): number {
+    return this._gender;
+  }
+
+  set gender(value: number) {
+    this._gender = value;
+  }
+
   get lastLogin(): Date {
     return this._lastLogin;
   }
@@ -80,11 +89,11 @@ export class User extends AbstractModel implements Deserializable {
     this._loginCoolDown = value;
   }
 
-  get status(): Status {
+  get status(): number {
     return this._status;
   }
 
-  set status(value: Status) {
+  set status(value: number) {
     this._status = value;
   }
 
@@ -108,5 +117,17 @@ export class User extends AbstractModel implements Deserializable {
       name: this.fullName,
       address: this.email
     };
+  }
+
+  get fullNameWithSirOrMadam(): string {
+    let prefix: string = "";
+
+    if (this.gender === Gender.MALE) {
+      prefix = "Herr ";
+    } else if (this.gender === Gender.FEMALE) {
+      prefix = "Frau ";
+    }
+
+    return prefix + this.fullName;
   }
 }
