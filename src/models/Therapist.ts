@@ -4,6 +4,7 @@ import { Deserializable } from "./Deserializable";
 
 export class Therapist extends User implements Deserializable {
   private _patients: Patient[] = [];
+  private _role: number;
 
   public constructor() {
     super();
@@ -25,4 +26,11 @@ export class Therapist extends User implements Deserializable {
     this._patients = value;
   }
 
+  get role(): number {
+    return this._role;
+  }
+
+  set role(value: number) {
+    this._role = value;
+  }
 }
