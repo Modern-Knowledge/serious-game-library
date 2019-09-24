@@ -7,8 +7,7 @@ export class Game extends AbstractModel {
     private _name: string;
     private _description: string;
 
-    // todo: refactor to map, easier to get right helptext
-    private _helptexts: Helptext[] = [];
+    private _helptexts: Map<string, Helptext> = new Map<string, Helptext>();
     private _gameSettings: GameSetting[] = [];
 
     public constructor() {
@@ -31,11 +30,11 @@ export class Game extends AbstractModel {
         this._description = value;
     }
 
-    get helptexts(): Helptext[] {
+    get helptexts(): Map<string, Helptext> {
         return this._helptexts;
     }
 
-    set helptexts(value: Helptext[]) {
+    set helptexts(value: Map<string, Helptext>) {
         this._helptexts = value;
     }
 
