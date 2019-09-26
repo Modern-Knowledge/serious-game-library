@@ -3,7 +3,7 @@ import { Session } from "./Session";
 import { Deserializable } from "./Deserializable";
 import { Gender } from "../enums/Gender";
 
-export class User extends AbstractModel implements Deserializable {
+export class User extends AbstractModel<User> implements Deserializable {
   private _email: string;
   private _password: string;
   private _forename: string;
@@ -148,4 +148,5 @@ export class User extends AbstractModel implements Deserializable {
 
     return prefix + this.fullName;
   }
+
 }

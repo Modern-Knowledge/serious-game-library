@@ -1,7 +1,7 @@
 import { AbstractModel } from "./AbstractModel";
 import { Deserializable } from "./Deserializable";
 
-export class PatientSetting extends AbstractModel implements Deserializable {
+export class PatientSetting extends AbstractModel<PatientSetting> implements Deserializable {
   private _neglect: boolean;
   private _patientId: number;
 

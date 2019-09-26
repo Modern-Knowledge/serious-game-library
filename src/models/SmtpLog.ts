@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class SmtpLog extends AbstractModel {
+export class SmtpLog extends AbstractModel<SmtpLog> {
     private _subject: string;
     private _body: string;
     private _rcptEmail: string;

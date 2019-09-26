@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class Word extends AbstractModel {
+export class Word extends AbstractModel<Word> {
     private _name: string;
 
     public constructor() {

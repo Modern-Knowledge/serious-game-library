@@ -5,7 +5,7 @@
 
 import { AbstractModel } from "./AbstractModel";
 
-export class FoodCategory extends AbstractModel {
+export class FoodCategory extends AbstractModel<FoodCategory> {
 
     private _name: string;
 

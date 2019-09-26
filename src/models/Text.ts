@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class Text extends AbstractModel {
+export class Text extends AbstractModel<Text> {
     private _name: string;
     private _text: string;
 

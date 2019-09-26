@@ -1,7 +1,7 @@
 import { AbstractModel } from "./AbstractModel";
 import { Difficulty } from "./Difficulty";
 
-export class GameSetting extends AbstractModel {
+export class GameSetting extends AbstractModel<GameSetting> {
 
     private _gameId: number;
     private _difficultyId: number;

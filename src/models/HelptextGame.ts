@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class HelptextGame extends AbstractModel {
+export class HelptextGame extends AbstractModel<HelptextGame> {
 
     private _gameId: number;
     private _helptextId: number;

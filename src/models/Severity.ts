@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class Severity extends AbstractModel {
+export class Severity extends AbstractModel<Severity> {
 
     private _severity: number;
 

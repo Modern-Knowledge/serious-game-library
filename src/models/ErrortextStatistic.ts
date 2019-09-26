@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class ErrortextStatistic extends AbstractModel {
+export class ErrortextStatistic extends AbstractModel<ErrortextStatistic> {
 
     private _errortextId: number;
     private _statisticId: number;

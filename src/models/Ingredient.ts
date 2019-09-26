@@ -7,7 +7,7 @@ import { AbstractModel } from "./AbstractModel";
 import { Image } from "./Image";
 import { FoodCategory } from "./FoodCategory";
 
-export class Ingredient extends AbstractModel {
+export class Ingredient extends AbstractModel<Ingredient> {
 
     private _name: string;
     private _imageId: number;

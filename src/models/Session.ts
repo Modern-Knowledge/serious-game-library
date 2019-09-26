@@ -5,7 +5,7 @@ import { Therapist } from "./Therapist";
 import { GameSetting } from "./GameSetting";
 import { Statistic } from "./Statistic";
 
-export class Session extends AbstractModel {
+export class Session extends AbstractModel<Session> {
 
     private _gameId: number;
     private _patientId: number;

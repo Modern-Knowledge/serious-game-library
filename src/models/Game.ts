@@ -2,7 +2,7 @@ import { AbstractModel } from "./AbstractModel";
 import { Helptext } from "./Helptext";
 import { GameSetting } from "./GameSetting";
 
-export class Game extends AbstractModel {
+export class Game extends AbstractModel<Game> {
 
     private _name: string;
     private _description: string;

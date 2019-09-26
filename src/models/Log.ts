@@ -1,7 +1,7 @@
 import { AbstractModel } from "./AbstractModel";
 import { User } from "./User";
 
-export class Log extends AbstractModel {
+export class Log extends AbstractModel<Log> {
   private _logger: string;
   private _level: string;
   private _method: string;

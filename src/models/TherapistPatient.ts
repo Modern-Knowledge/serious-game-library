@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class TherapistPatient extends AbstractModel {
+export class TherapistPatient extends AbstractModel<TherapistPatient> {
 
   private _therapistId: number;
   private _patientId: number;

@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 
-export class Difficulty extends AbstractModel {
+export class Difficulty extends AbstractModel<Difficulty> {
 
     private _difficulty: number;
 

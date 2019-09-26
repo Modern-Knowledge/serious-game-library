@@ -1,7 +1,7 @@
 import { AbstractModel } from "./AbstractModel";
 import { Errortext } from "./Errortext";
 
-export class Statistic extends AbstractModel {
+export class Statistic extends AbstractModel<Statistic> {
     private _startTime: Date;
     private _endTime: Date;
 
