@@ -13,6 +13,8 @@ export class User extends AbstractModel implements Deserializable {
   private _failedLoginAttempts: number;
   private _loginCoolDown: Date;
   private _status: number;
+  private _resetcode: number;
+  private _resetcodeValidUntil: Date;
 
   private _sessions: Session[] = [];
 
@@ -95,6 +97,22 @@ export class User extends AbstractModel implements Deserializable {
 
   set status(value: number) {
     this._status = value;
+  }
+
+  get resetcode(): number {
+    return this._resetcode;
+  }
+
+  set resetcode(value: number) {
+    this._resetcode = value;
+  }
+
+  get resetcodeValidUntil(): Date {
+    return this._resetcodeValidUntil;
+  }
+
+  set resetcodeValidUntil(value: Date) {
+    this._resetcodeValidUntil = value;
   }
 
   get sessions(): Session[] {
