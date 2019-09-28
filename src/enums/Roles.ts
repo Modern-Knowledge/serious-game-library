@@ -4,6 +4,6 @@
  */
 
 export const enum Roles {
-    USER = 0,
-    ADMIN = 1,
+    USER = 1,
+    ADMIN = 2,
 }

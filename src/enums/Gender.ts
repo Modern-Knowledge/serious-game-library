@@ -4,7 +4,7 @@
  */
 
 export const enum Gender {
-    MALE = 0,
-    FEMALE = 1,
-    UNKNOWN = 2
+    MALE = 1,
+    FEMALE = 2,
+    UNKNOWN = 3
 }
