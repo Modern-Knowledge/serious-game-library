@@ -1,18 +1,23 @@
-import { AbstractModel } from "./AbstractModel";
+import { AbstractModel } from './AbstractModel'
+import { Deserializable } from './Deserializable'
 
-export class Image extends AbstractModel<Image> {
+export class Image extends AbstractModel<Image> implements Deserializable {
+  private _image: any
 
-    private _image: any;
+  public constructor() {
+    super()
+  }
 
-    public constructor() {
-        super();
-    }
+  public deserialize(input: any) {
+    Object.assign(this, input)
+    return this
+  }
 
-    get image(): any {
-        return this._image;
-    }
+  get image(): any {
+    return this._image
+  }
 
-    set image(value: any) {
-        this._image = value;
-    }
+  set image(value: any) {
+    this._image = value
+  }
 }

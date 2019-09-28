@@ -1,17 +1,23 @@
-import { AbstractModel } from "./AbstractModel";
+import { AbstractModel } from './AbstractModel'
+import { Deserializable } from './Deserializable'
 
-export class Word extends AbstractModel<Word> {
-    private _name: string;
+export class Word extends AbstractModel<Word> implements Deserializable {
+  private _name: string
 
-    public constructor() {
-        super();
-    }
+  public constructor() {
+    super()
+  }
 
-    get name(): string {
-        return this._name;
-    }
+  public deserialize(input: any) {
+    Object.assign(this, input)
+    return this
+  }
 
-    set name(value: string) {
-        this._name = value;
-    }
+  get name(): string {
+    return this._name
+  }
+
+  set name(value: string) {
+    this._name = value
+  }
 }
