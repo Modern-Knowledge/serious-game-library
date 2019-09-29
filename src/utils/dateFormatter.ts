@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2019 Florian Mold
+ * All rights reserved.
+ */
+
 import moment from "moment";
 
 /**
@@ -5,7 +10,7 @@ import moment from "moment";
  * e.g. 01.01.1970 12:00
  * @param date
  */
-export function formatDateTime(date: Date): string {
+export function formatDateTime(date: Date = new Date()): string {
   return moment(date).format("L LT");
 }
 
@@ -14,7 +19,7 @@ export function formatDateTime(date: Date): string {
  * e.g. 01.01.1970
  * @param date
  */
-export function formatDate(date: Date): string {
+export function formatDate(date: Date = new Date()): string {
   return moment(date).format("L");
 }
 
@@ -23,6 +28,6 @@ export function formatDate(date: Date): string {
  * e.g. 12:00
  * @param date
  */
-export function formatTime(date: Date): string {
+export function formatTime(date: Date = new Date()): string {
   return moment(date).format("LT");
 }
