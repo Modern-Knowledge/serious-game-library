@@ -2,28 +2,34 @@ import { AbstractModel } from "./AbstractModel";
 import { Helptext } from "./Helptext";
 import { Text } from "./Text";
 import { GameSetting } from "./GameSetting";
+
 export class Game extends AbstractModel<Game> {
 
     private _name: string;
     private _description: string;
 
-    private _helptexts: Map<string, Helptext> = new Map<string, Helptext>();
+    private _helptexts: Helptext[] = [];
     private _gameSettings: GameSetting[] = [];
+
+    /**
+     * helptext array converted to helptext map
+     */
+    private _helptextMap: Map<string, Helptext> = undefined;
 
     public constructor() {
         super();
     }
 
     public deserialize(input: any) {
-        Object.assign(this, input)
-        Array.from(this.helptexts, ([key, value]) => {
-            return new Helptext().deserialize(value);
+        Object.assign(this, input);
+        this.helptexts = this.helptexts.map(helptext => {
+            return new Helptext().deserialize(helptext);
         });
-        
+
         this.gameSettings = this.gameSettings.map(gameSetting => {
-          return new GameSetting().deserialize(gameSetting)
-        })
-        return this
+          return new GameSetting().deserialize(gameSetting);
+        });
+        return this;
     }
 
     get name(): string {
@@ -42,11 +48,11 @@ export class Game extends AbstractModel<Game> {
         this._description = value;
     }
 
-    get helptexts(): Map<string, Helptext> {
+    get helptexts(): Helptext[] {
         return this._helptexts;
     }
 
-    set helptexts(value: Map<string, Helptext>) {
+    set helptexts(value: Helptext[]) {
         this._helptexts = value;
     }
 
@@ -58,4 +64,19 @@ export class Game extends AbstractModel<Game> {
         this._gameSettings = value;
     }
 
+    /**
+     * reads helptexts[] into map
+     */
+    public createHelptextMap(): void {
+        this._helptextMap = new Map<string, Helptext>();
+
+        for (const helpText of this._helptexts) {
+            this._helptextMap.set(helpText.name, helpText);
+        }
+
+    }
+
+    get helptextMap(): Map<string, Helptext> {
+        return this._helptextMap;
+    }
 }
