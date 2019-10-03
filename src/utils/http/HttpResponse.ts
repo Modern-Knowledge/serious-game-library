@@ -18,7 +18,7 @@ export class HttpResponse implements Deserializable {
     public deserialize(input: any) {
         Object.assign(this, input);
 
-        this._messages = this._messages.map(message => {
+        this._messages = this._messages && this._messages.map(message => {
             return new HttpResponseMessage().deserialize(message);
         });
 
