@@ -1,7 +1,8 @@
 import { AbstractModel } from "./AbstractModel";
 import { Errortext } from "./Errortext";
+import {Deserializable} from "./Deserializable";
 
-export class Statistic extends AbstractModel<Statistic> {
+export class Statistic extends AbstractModel<Statistic> implements Deserializable {
     private _startTime: Date;
     private _endTime: Date;
 
@@ -9,6 +10,11 @@ export class Statistic extends AbstractModel<Statistic> {
 
     public constructor() {
         super();
+    }
+
+    public deserialize(input: any) {
+        Object.assign(this, input);
+        return this;
     }
 
     get startTime(): Date {
