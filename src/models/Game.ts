@@ -1,5 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 import { Helptext } from "./Helptext";
+import { Text } from "./Text";
 import { GameSetting } from "./GameSetting";
 
 export class Game extends AbstractModel<Game> {
@@ -12,6 +13,19 @@ export class Game extends AbstractModel<Game> {
 
     public constructor() {
         super();
+    }
+
+    public deserialize(input: any) {
+        Object.assign(this, input)
+        
+        Array.from(this.helptexts.values()).forEach(helptext => {
+            return new Helptext().deserialize(helptext);
+        });
+
+        this.gameSettings = this.gameSettings.map(gameSetting => {
+          return new GameSetting().deserialize(gameSetting)
+        })
+        return this
     }
 
     get name(): string {
