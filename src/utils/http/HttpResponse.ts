@@ -3,21 +3,34 @@
  * All rights reserved.
  */
 
+import { Deserializable } from "../../models/Deserializable";
+import { Patient } from "../../models/Patient";
+
 /**
  * https://github.com/omniti-labs/jsend
  */
-export class HttpResponse {
-    private readonly _status: HttpResponseStatus;
-    private readonly _data?: any;
-    private readonly _messages?: HttpResponseMessage[];
-    //private readonly version: string = process.env.VERSION;
+export class HttpResponse implements Deserializable {
+    private _status: HttpResponseStatus;
+    private _data?: any;
+    private _messages?: HttpResponseMessage[];
+    // private readonly version: string = process.env.VERSION;
+
+    public deserialize(input: any) {
+        Object.assign(this, input);
+
+        this._messages = this._messages.map(message => {
+            return new HttpResponseMessage().deserialize(message);
+        });
+
+        return this;
+    }
 
     /**
      * @param status
      * @param data
      * @param messages
      */
-    public constructor(status: HttpResponseStatus, data?: any, messages?: HttpResponseMessage[]) {
+    public constructor(status?: HttpResponseStatus, data?: any, messages?: HttpResponseMessage[]) {
         this._status = status;
 
         if (data) {
@@ -28,10 +41,12 @@ export class HttpResponse {
 
         this._messages = messages;
     }
-    public get status(){
+
+    public get status() {
         return this._status;
     }
-    public get data(){
+
+    public get data() {
         return this._data;
     }
 }
@@ -42,17 +57,22 @@ export const enum HttpResponseStatus {
     ERROR = "error"
 }
 
-export class HttpResponseMessage {
-    private readonly severity: HttpResponseMessageSeverity;
-    private readonly message: string;
+export class HttpResponseMessage implements Deserializable {
+    private severity: HttpResponseMessageSeverity;
+    private message: string;
 
     /**
      * @param severity
      * @param message
      */
-    public constructor(severity: HttpResponseMessageSeverity, message: string) {
+    public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
         this.severity = severity;
         this.message = message;
+    }
+
+    public deserialize(input: any): this {
+        Object.assign(this, input);
+        return this;
     }
 }
 
