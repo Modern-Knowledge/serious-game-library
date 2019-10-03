@@ -4,8 +4,9 @@ import { Patient } from "./Patient";
 import { Therapist } from "./Therapist";
 import { GameSetting } from "./GameSetting";
 import { Statistic } from "./Statistic";
+import {Deserializable} from "./Deserializable";
 
-export class Session extends AbstractModel<Session> {
+export class Session extends AbstractModel<Session> implements Deserializable {
 
     private _gameId: number;
     private _patientId: number;
@@ -22,6 +23,11 @@ export class Session extends AbstractModel<Session> {
 
     public constructor() {
         super();
+    }
+
+    public deserialize(input: any) {
+        Object.assign(this, input);
+        return this;
     }
 
     get gameId(): number {
