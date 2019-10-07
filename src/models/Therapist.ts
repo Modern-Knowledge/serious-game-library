@@ -5,6 +5,7 @@ import { Deserializable } from "./Deserializable";
 export class Therapist extends User implements Deserializable {
   private _patients: Patient[] = [];
   private _role: number;
+  private _accepted: boolean;
 
   public constructor() {
     super();
@@ -32,5 +33,13 @@ export class Therapist extends User implements Deserializable {
 
   set role(value: number) {
     this._role = value;
+  }
+
+  get accepted(): boolean {
+    return this._accepted;
+  }
+
+  set accepted(value: boolean) {
+    this._accepted = value;
   }
 }
