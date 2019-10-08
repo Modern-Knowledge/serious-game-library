@@ -18,8 +18,6 @@ export class User extends AbstractModel<User> implements Deserializable {
     private _resetcode: number;
     private _resetcodeValidUntil: Date;
 
-    private _token: string;
-
     private _sessions: Session[] = [];
 
     public constructor() {
@@ -117,14 +115,6 @@ export class User extends AbstractModel<User> implements Deserializable {
 
     set resetcodeValidUntil(value: Date) {
         this._resetcodeValidUntil = value;
-    }
-
-    get token(): string {
-        return this._token;
-    }
-
-    set token(value: string) {
-        this._token = value;
     }
 
     get sessions(): Session[] {
