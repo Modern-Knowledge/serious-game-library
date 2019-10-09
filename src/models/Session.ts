@@ -4,7 +4,7 @@ import { Patient } from "./Patient";
 import { Therapist } from "./Therapist";
 import { GameSetting } from "./GameSetting";
 import { Statistic } from "./Statistic";
-import {Deserializable} from "./Deserializable";
+import {Deserializable} from "../interfaces/Deserializable";
 
 export class Session extends AbstractModel<Session> implements Deserializable {
 

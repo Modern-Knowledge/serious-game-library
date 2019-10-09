@@ -1,5 +1,5 @@
 import { AbstractModel } from './AbstractModel'
-import { Deserializable } from './Deserializable'
+import { Deserializable } from '../interfaces/Deserializable'
 
 export class Image extends AbstractModel<Image> implements Deserializable {
   private _image: any

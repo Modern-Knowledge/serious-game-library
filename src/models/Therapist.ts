@@ -1,6 +1,6 @@
 import { User } from "./User";
 import { Patient } from "./Patient";
-import { Deserializable } from "./Deserializable";
+import { Deserializable } from "../interfaces/Deserializable";
 
 export class Therapist extends User implements Deserializable {
   private _patients: Patient[] = [];

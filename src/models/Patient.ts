@@ -1,6 +1,6 @@
 import { User } from "./User";
 import { PatientSetting } from "./PatientSetting";
-import { Deserializable } from "./Deserializable";
+import { Deserializable } from "../interfaces/Deserializable";
 
 export class Patient extends User implements Deserializable {
   private _birthday: Date;

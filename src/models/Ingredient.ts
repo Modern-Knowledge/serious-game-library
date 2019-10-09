@@ -6,7 +6,7 @@
 import { AbstractModel } from './AbstractModel'
 import { Image } from './Image'
 import { FoodCategory } from './FoodCategory'
-import { Deserializable } from './Deserializable'
+import { Deserializable } from '../interfaces/Deserializable'
 
 export class Ingredient extends AbstractModel<Ingredient>
   implements Deserializable {

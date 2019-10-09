@@ -1,6 +1,6 @@
 import { AbstractModel } from "./AbstractModel";
 import { Session } from "./Session";
-import { Deserializable } from "./Deserializable";
+import { Deserializable } from "../interfaces/Deserializable";
 import { Gender } from "../enums/Gender";
 import moment from "moment";
 

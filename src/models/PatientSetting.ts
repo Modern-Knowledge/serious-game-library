@@ -1,5 +1,5 @@
 import { AbstractModel } from "./AbstractModel";
-import { Deserializable } from "./Deserializable";
+import { Deserializable } from "../interfaces/Deserializable";
 
 export class PatientSetting extends AbstractModel<PatientSetting> implements Deserializable {
   private _neglect: boolean;

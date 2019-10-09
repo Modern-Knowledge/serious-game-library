@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-import { Deserializable } from "../../models/Deserializable";
+import { Deserializable } from "../../interfaces/Deserializable";
 import { Patient } from "../../models/Patient";
 
 /**
