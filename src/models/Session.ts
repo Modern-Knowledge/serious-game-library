@@ -4,14 +4,14 @@ import { Patient } from "./Patient";
 import { Therapist } from "./Therapist";
 import { GameSetting } from "./GameSetting";
 import { Statistic } from "./Statistic";
-import {Deserializable} from "../interfaces/Deserializable";
+import { Deserializable } from "../interfaces/Deserializable";
+import {UserInterface} from "../interfaces/UserInterface";
 
-export class Session extends AbstractModel<Session> implements Deserializable {
+export class Session extends AbstractModel<Session> implements Deserializable, UserInterface {
 
     private _gameId: number;
     private _patientId: number;
     private _statisticId: number;
-    private _therapistId: number;
     private _gameSettingId: number;
     private _date: Date;
 
@@ -52,14 +52,6 @@ export class Session extends AbstractModel<Session> implements Deserializable {
 
     set statisticId(value: number) {
         this._statisticId = value;
-    }
-
-    get therapistId(): number {
-        return this._therapistId;
-    }
-
-    set therapistId(value: number) {
-        this._therapistId = value;
     }
 
     get gameSettingId(): number {
@@ -117,4 +109,9 @@ export class Session extends AbstractModel<Session> implements Deserializable {
     set statistic(value: Statistic) {
         this._statistic = value;
     }
+
+    getUserId(): number {
+        return this._patientId;
+    }
+
 }

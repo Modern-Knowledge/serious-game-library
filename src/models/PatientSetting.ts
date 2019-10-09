@@ -1,7 +1,8 @@
 import { AbstractModel } from "./AbstractModel";
 import { Deserializable } from "../interfaces/Deserializable";
+import {UserInterface} from "../interfaces/UserInterface";
 
-export class PatientSetting extends AbstractModel<PatientSetting> implements Deserializable {
+export class PatientSetting extends AbstractModel<PatientSetting> implements Deserializable, UserInterface {
   private _neglect: boolean;
   private _patientId: number;
 
@@ -29,4 +30,10 @@ export class PatientSetting extends AbstractModel<PatientSetting> implements Des
   set patientId(value: number) {
     this._patientId = value;
   }
+
+  public getUserId(): number {
+      return this._patientId;
+  }
+
+
 }

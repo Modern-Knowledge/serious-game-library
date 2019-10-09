@@ -3,27 +3,27 @@
  * All rights reserved.
  */
 
-import { AbstractModel } from './AbstractModel'
-import { Deserializable } from '../interfaces/Deserializable'
+import { AbstractModel } from "./AbstractModel";
+import { Deserializable } from "../interfaces/Deserializable";
 
 export class FoodCategory extends AbstractModel<FoodCategory>
   implements Deserializable {
-  private _name: string
+  private _name: string;
 
   public constructor() {
-    super()
+    super();
   }
 
   public deserialize(input: any) {
-    Object.assign(this, input)
-    return this
+    Object.assign(this, input);
+    return this;
   }
 
   get name(): string {
-    return this._name
+    return this._name;
   }
 
   set name(value: string) {
-    this._name = value
+    this._name = value;
   }
 }

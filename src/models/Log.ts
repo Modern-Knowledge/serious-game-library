@@ -1,7 +1,8 @@
 import { AbstractModel } from "./AbstractModel";
 import { User } from "./User";
+import { UserInterface } from "../interfaces/UserInterface";
 
-export class Log extends AbstractModel<Log> {
+export class Log extends AbstractModel<Log> implements UserInterface {
   private _logger: string;
   private _level: string;
   private _method: string;
@@ -70,4 +71,10 @@ export class Log extends AbstractModel<Log> {
   set user(value: User) {
     this._user = value;
   }
+
+  public getUserId(): number {
+    return this._userId;
+  }
+
+
 }

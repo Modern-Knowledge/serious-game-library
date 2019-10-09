@@ -3,9 +3,10 @@ import { Session } from "./Session";
 import { Deserializable } from "../interfaces/Deserializable";
 import { Gender } from "../enums/Gender";
 import moment from "moment";
+import { UserInterface } from "../interfaces/UserInterface";
 
 
-export class User extends AbstractModel<User> implements Deserializable {
+export class User extends AbstractModel<User> implements Deserializable, UserInterface {
     private _email: string;
     private _password: string;
     private _forename: string;
@@ -127,6 +128,10 @@ export class User extends AbstractModel<User> implements Deserializable {
 
     get fullName() {
         return this.forename + " " + this.lastname;
+    }
+
+    getUserId(): number {
+        return this.id;
     }
 
     /**
