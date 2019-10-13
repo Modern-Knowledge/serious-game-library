@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2019 Florian Mold
+ * All rights reserved.
+ */
+
 import { AbstractModel } from "./AbstractModel";
 import { Deserializable } from "../interfaces/Deserializable";
 import {UserInterface} from "../interfaces/UserInterface";
@@ -15,7 +20,7 @@ export class PatientSetting extends AbstractModel<PatientSetting> implements Des
     return this;
   }
 
-  get hasNeglect(): boolean {
+  get neglect(): boolean {
     return this._neglect;
   }
 
