@@ -24,7 +24,7 @@ export class Ingredient extends AbstractModel<Ingredient>
   public deserialize(input: any) {
     Object.assign(this, input);
     this.image = new Image().deserialize(input.image);
-    this.foodCategory = new FoodCategory().deserialize(input.foodCategory);
+    this.foodCategory = new FoodCategory().deserialize(input._foodCategory)
     return this;
   }
 
