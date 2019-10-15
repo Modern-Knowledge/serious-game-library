@@ -58,7 +58,7 @@ export const enum HttpResponseStatus {
 }
 
 export class HttpResponseMessage implements Deserializable {
-    private severity: HttpResponseMessageSeverity;
+    private _severity: HttpResponseMessageSeverity;
     private message: string;
 
     /**
@@ -66,7 +66,7 @@ export class HttpResponseMessage implements Deserializable {
      * @param message
      */
     public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
-        this.severity = severity;
+        this._severity = severity;
         this.message = message;
     }
 
@@ -74,6 +74,11 @@ export class HttpResponseMessage implements Deserializable {
         Object.assign(this, input);
         return this;
     }
+
+    get severity(): HttpResponseMessageSeverity {
+        return this._severity;
+    }
+
 }
 
 export const enum HttpResponseMessageSeverity {
