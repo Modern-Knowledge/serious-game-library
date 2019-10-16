@@ -3,87 +3,96 @@
  * All rights reserved.
  */
 
-import { Deserializable } from "../../interfaces/Deserializable";
-import { Patient } from "../../models/Patient";
+import { Deserializable } from '../../interfaces/Deserializable'
+import { Patient } from '../../models/Patient'
 
 /**
  * https://github.com/omniti-labs/jsend
  */
 export class HttpResponse implements Deserializable {
-    private _status: HttpResponseStatus;
-    private _data?: any;
-    private _messages?: HttpResponseMessage[];
-    // private readonly version: string = process.env.VERSION;
+  private _status: HttpResponseStatus
+  private _data?: any
+  private _messages?: HttpResponseMessage[]
+  // private readonly version: string = process.env.VERSION;
 
-    public deserialize(input: any) {
-        Object.assign(this, input);
+  public deserialize(input: any) {
+    Object.assign(this, input)
 
-        this._messages = this._messages && this._messages.map(message => {
-            return new HttpResponseMessage().deserialize(message);
-        });
+    this._messages =
+      this._messages &&
+      this._messages.map(message => {
+        return new HttpResponseMessage().deserialize(message)
+      })
 
-        return this;
+    return this
+  }
+
+  /**
+   * @param status
+   * @param data
+   * @param messages
+   */
+  public constructor(
+    status?: HttpResponseStatus,
+    data?: any,
+    messages?: HttpResponseMessage[]
+  ) {
+    this._status = status
+
+    if (data) {
+      this._data = data
+    } else {
+      this._data = undefined
     }
 
-    /**
-     * @param status
-     * @param data
-     * @param messages
-     */
-    public constructor(status?: HttpResponseStatus, data?: any, messages?: HttpResponseMessage[]) {
-        this._status = status;
+    this._messages = messages
+  }
 
-        if (data) {
-            this._data = data;
-        } else {
-            this._data = undefined;
-        }
+  public get messages() {
+    return this._messages
+  }
 
-        this._messages = messages;
-    }
+  public get status() {
+    return this._status
+  }
 
-    public get status() {
-        return this._status;
-    }
-
-    public get data() {
-        return this._data;
-    }
+  public get data() {
+    return this._data
+  }
 }
 
 export const enum HttpResponseStatus {
-    SUCCESS = "success",
-    FAIL = "fail",
-    ERROR = "error"
+  SUCCESS = 'success',
+  FAIL = 'fail',
+  ERROR = 'error'
 }
 
 export class HttpResponseMessage implements Deserializable {
-    private _severity: HttpResponseMessageSeverity;
-    private message: string;
+  private _severity: HttpResponseMessageSeverity
+  private message: string
 
-    /**
-     * @param severity
-     * @param message
-     */
-    public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
-        this._severity = severity;
-        this.message = message;
-    }
+  /**
+   * @param severity
+   * @param message
+   */
+  public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
+    this._severity = severity
+    this.message = message
+  }
 
-    public deserialize(input: any): this {
-        Object.assign(this, input);
-        return this;
-    }
+  public deserialize(input: any): this {
+    Object.assign(this, input)
+    return this
+  }
 
-    get severity(): HttpResponseMessageSeverity {
-        return this._severity;
-    }
-
+  get severity(): HttpResponseMessageSeverity {
+    return this._severity
+  }
 }
 
 export const enum HttpResponseMessageSeverity {
-    SUCCESS = "success",
-    WARNING = "warning",
-    DANGER = "danger",
-    INFO = "primary"
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  DANGER = 'danger',
+  INFO = 'primary'
 }
