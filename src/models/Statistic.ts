@@ -13,7 +13,12 @@ export class Statistic extends AbstractModel<Statistic> implements Deserializabl
     }
 
     public deserialize(input: any) {
-        Object.assign(this, input);
+        if (input && input._startTime) {
+            this._startTime = new Date(input._startTime);
+        }
+        if (input && input._endTime) {
+            this._endTime = new Date(input._endTime);
+        }
         return this;
     }
 
