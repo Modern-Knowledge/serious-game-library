@@ -58,6 +58,14 @@ export class Game extends AbstractModel<Game> {
     this._helptexts = value;
   }
 
+  get errortexts(): Errortext[] {
+    return this._errortexts;
+  }
+
+  set errortexts(value: Errortext[]) {
+    this._errortexts = value;
+  }
+
   get gameSettings(): GameSetting[] {
     return this._gameSettings;
   }
@@ -88,4 +96,5 @@ export class Game extends AbstractModel<Game> {
   get helptextMap(): Map<string, Helptext> {
     return this._helptextMap;
   }
+
 }
