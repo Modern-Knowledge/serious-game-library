@@ -3,7 +3,7 @@ import { AbstractModel } from "./AbstractModel";
 export class ErrortextGame extends AbstractModel<ErrortextGame> {
 
     private _gameId: number;
-    private _errortextsErrorId: number;
+    private _errorId: number;
 
     public constructor() {
         super();
@@ -17,11 +17,11 @@ export class ErrortextGame extends AbstractModel<ErrortextGame> {
         this._gameId = value;
     }
 
-    get errortextsErrorId(): number {
-        return this._errortextsErrorId;
+    get errorId(): number {
+        return this._errorId;
     }
 
-    set errortextsErrorId(value: number) {
-        this._errortextsErrorId = value;
+    set errorId(value: number) {
+        this._errorId = value;
     }
 }
