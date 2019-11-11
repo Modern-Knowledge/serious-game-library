@@ -3,17 +3,11 @@
   "version": "1.0.0",
   "description": "Library for serious game",
   "keywords": [],
-  "files": [
-    "dist"
-  ],
   "author": "Modern Knowledge",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/modern-knowledge/bachelorarbeit/serious-game-library"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=6.0.0"
   },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
@@ -23,43 +17,6 @@
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "report-coverage": "cat ./coverage/lcov.info | coveralls"
-  },
-  "lint-staged": {
-    "{src,test}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testEnvironment": "node",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 95,
-        "lines": 95,
-        "statements": 95
-      }
-    },
-    "collectCoverageFrom": [
-      "src/*.{js,ts}"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
