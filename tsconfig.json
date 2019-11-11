@@ -1,77 +1,43 @@
 {
-  "rules": {
-    "deprecation": {
-      "severity": "warn"
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "lib": ["es2015", "es2016", "dom"],
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "removeComments": false,
+    "importHelpers": true,
+    "downlevelIteration": true,
+
+
+    "strict": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+
+    "declarationDir": "dist/types",
+
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
     },
-    "class-name": true,
-    "interface-name": true,
-    "max-classes-per-file": false,
-    "member-access": true,
-    "no-consecutive-blank-lines": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
-    "indent": [
-      true,
-      "spaces",
-      4
-    ],
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-whitespace"
-    ],
-    "no-var-keyword": true,
-    "quotemark": [
-      true,
-      "double",
-      "avoid-escape"
-    ],
-    "semicolon": [
-      true,
-      "always",
-      "ignore-bound-class-methods"
-    ],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-module",
-      "check-separator",
-      "check-type"
-    ],
-    "typedef-whitespace": [
-      true,
-      {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      },
-      {
-        "call-signature": "onespace",
-        "index-signature": "onespace",
-        "parameter": "onespace",
-        "property-declaration": "onespace",
-        "variable-declaration": "onespace"
-      }
-    ],
-    "object-literal-key-quotes": [
-      true,
-      "as-needed"
-    ],
-    "no-non-null-assertion": true,
-    "no-redundant-jsdoc": true,
-    "object-literal-sort-keys": true,
-    "ordered-imports": true,
-    "trailing-comma": false
+
+    "diagnostics": true,
+    "extendedDiagnostics": true
   },
-  "extends": ["tslint:recommended", "tslint-sonarts"]
+  "include": [
+    "src/**/*"
+  ]
 }
