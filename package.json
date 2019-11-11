@@ -10,13 +10,15 @@
     "url": "https://gitlab.com/modern-knowledge/bachelorarbeit/serious-game-library"
   },
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "build": "tsc && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "pre-build": "rm -rf dist/",
+    "build": "npm run pre-build && npm run build-ts",
+    "build-ts": "tsc",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --runInBand --testTimeout=10000 --forceExit --coverage --verbose",
+    "test:prod": "npm run tslint && npm run test -- --no-cache",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "delete-docs": "rm -rf docs/"
+    "delete-docs": "rm -rf docs/",
+    "build-docs": "npm run delete-docs && typedoc"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
