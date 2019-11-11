@@ -1,6 +1,6 @@
-import { User } from "./User";
-import { Patient } from "./Patient";
 import { Deserializable } from "../interfaces/Deserializable";
+import { Patient } from "./Patient";
+import { User } from "./User";
 
 export class Therapist extends User implements Deserializable {
   private _patients: Patient[] = [];
@@ -13,7 +13,7 @@ export class Therapist extends User implements Deserializable {
 
   public deserialize(input: any) {
     Object.assign(this, input);
-    this.patients = this.patients.map(patient => {
+    this.patients = this.patients.map((patient) => {
       return new Patient().deserialize(patient);
     });
     return this;

@@ -1,6 +1,6 @@
+import { Deserializable } from "../interfaces/Deserializable";
 import { AbstractModel } from "./AbstractModel";
 import { Errortext } from "./Errortext";
-import { Deserializable } from "../interfaces/Deserializable";
 
 export class Statistic extends AbstractModel<Statistic> implements Deserializable {
     private _startTime: Date;

@@ -50,5 +50,3 @@ export abstract class AbstractModel<Entity extends AbstractModel<Entity>> {
     return this.id === other.id;
   }
 }
-
-

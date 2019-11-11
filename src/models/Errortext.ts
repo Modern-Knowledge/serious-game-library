@@ -1,5 +1,5 @@
-import { Text } from "./Text";
 import { Severity } from "./Severity";
+import { Text } from "./Text";
 
 export class Errortext extends Text {
     private _severityId: number;

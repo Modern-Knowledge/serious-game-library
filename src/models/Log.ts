@@ -1,6 +1,6 @@
+import { UserInterface } from "../interfaces/UserInterface";
 import { AbstractModel } from "./AbstractModel";
 import { User } from "./User";
-import { UserInterface } from "../interfaces/UserInterface";
 
 export class Log extends AbstractModel<Log> implements UserInterface {
   private _logger: string;
@@ -75,6 +75,5 @@ export class Log extends AbstractModel<Log> implements UserInterface {
   public getUserId(): number {
     return this._userId;
   }
-
 
 }

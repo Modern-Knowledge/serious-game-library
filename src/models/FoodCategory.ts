@@ -1,7 +1,6 @@
 
-
-import { AbstractModel } from "./AbstractModel";
 import { Deserializable } from "../interfaces/Deserializable";
+import { AbstractModel } from "./AbstractModel";
 
 export class FoodCategory extends AbstractModel<FoodCategory>
   implements Deserializable {

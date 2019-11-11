@@ -1,5 +1,4 @@
 
-
 import { AbstractModel } from "./AbstractModel";
 
 export class RecipeIngredient extends AbstractModel<RecipeIngredient> {

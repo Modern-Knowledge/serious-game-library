@@ -1,9 +1,8 @@
 
-
-import { AbstractModel } from "./AbstractModel";
-import { Image } from "./Image";
-import { FoodCategory } from "./FoodCategory";
 import { Deserializable } from "../interfaces/Deserializable";
+import { AbstractModel } from "./AbstractModel";
+import { FoodCategory } from "./FoodCategory";
+import { Image } from "./Image";
 
 export class Ingredient extends AbstractModel<Ingredient>
   implements Deserializable {
@@ -21,7 +20,7 @@ export class Ingredient extends AbstractModel<Ingredient>
   public deserialize(input: any) {
     Object.assign(this, input);
     this.image = new Image().deserialize(input.image);
-    this.foodCategory = new FoodCategory().deserialize(input._foodCategory)
+    this.foodCategory = new FoodCategory().deserialize(input._foodCategory);
     return this;
   }
 

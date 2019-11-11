@@ -12,10 +12,10 @@ export class GameSetting extends AbstractModel<GameSetting> {
         super();
     }
 
-    public deserialize(input: any){
+    public deserialize(input: any) {
         Object.assign(this, input);
         this.difficulty = new Difficulty().deserialize(this.difficulty);
-        return this
+        return this;
     }
 
     get gameId(): number {

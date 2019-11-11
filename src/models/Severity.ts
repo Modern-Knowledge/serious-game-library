@@ -7,7 +7,7 @@ export class Severity extends AbstractModel<Severity> {
     public constructor() {
         super();
     }
-    
+
     get severity(): number {
         return this._severity;
     }

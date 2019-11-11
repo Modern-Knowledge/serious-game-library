@@ -1,5 +1,5 @@
-import { AbstractModel } from "./AbstractModel";
 import { Deserializable } from "../interfaces/Deserializable";
+import { AbstractModel } from "./AbstractModel";
 
 export class Difficulty extends AbstractModel<Difficulty>
   implements Deserializable {

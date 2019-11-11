@@ -1,10 +1,9 @@
+import moment from "moment";
+import { Gender } from "../enums/Gender";
+import { Deserializable } from "../interfaces/Deserializable";
+import { UserInterface } from "../interfaces/UserInterface";
 import { AbstractModel } from "./AbstractModel";
 import { Session } from "./Session";
-import { Deserializable } from "../interfaces/Deserializable";
-import { Gender } from "../enums/Gender";
-import moment from "moment";
-import { UserInterface } from "../interfaces/UserInterface";
-
 
 export class User extends AbstractModel<User> implements Deserializable, UserInterface {
     private _email: string;
@@ -130,7 +129,7 @@ export class User extends AbstractModel<User> implements Deserializable, UserInt
         return this.forename + " " + this.lastname;
     }
 
-    getUserId(): number {
+    public getUserId(): number {
         return this.id;
     }
 
@@ -148,7 +147,7 @@ export class User extends AbstractModel<User> implements Deserializable, UserInt
      * retrieve the full name of the user with the salutation prepended
      */
     get fullNameWithSirOrMadam(): string {
-        let prefix: string = "";
+        let prefix = "";
 
         if (this.gender === Gender.MALE) {
             prefix = "Herr ";
