@@ -7,88 +7,93 @@ import { Patient } from "../../models/Patient";
  */
 export class HttpResponse implements Deserializable {
 
-  public get messages() {
-    return this._messages;
-  }
-
-  public get status() {
-    return this._status;
-  }
-
-  public get data() {
-    return this._data;
-  }
-  private _status: HttpResponseStatus;
-  private _data?: any;
-  private _messages?: HttpResponseMessage[];
-
-  /**
-   * @param status
-   * @param data
-   * @param messages
-   */
-  public constructor(
-    status?: HttpResponseStatus,
-    data?: any,
-    messages?: HttpResponseMessage[]
-  ) {
-    this._status = status;
-
-    if (data) {
-      this._data = data;
-    } else {
-      this._data = undefined;
+    public get messages() {
+        return this._messages;
     }
 
-    this._messages = messages;
-  }
-  // private readonly version: string = process.env.VERSION;
+    public get status() {
+        return this._status;
+    }
 
-  public deserialize(input: any) {
-    Object.assign(this, input);
+    public get data() {
+        return this._data;
+    }
 
-    this._messages =
-      this._messages &&
-      this._messages.map((message) => {
-        return new HttpResponseMessage().deserialize(message);
-      });
+    private readonly _status: HttpResponseStatus;
+    private readonly _data?: any;
+    private _messages?: HttpResponseMessage[];
 
-    return this;
-  }
+    /**
+     * @param status http-response status (200, ...)
+     * @param data data of the http-response
+     * @param messages success/error messages for the response
+     */
+    public constructor(
+        status?: HttpResponseStatus,
+        data?: any,
+        messages?: HttpResponseMessage[]
+    ) {
+        this._status = status;
+
+        if (data) {
+            this._data = data;
+        } else {
+            this._data = undefined;
+        }
+
+        this._messages = messages;
+    }
+    // private readonly version: string = process.env.VERSION;
+
+    public deserialize(input: any) {
+        Object.assign(this, input);
+
+        this._messages =
+            this._messages &&
+            this._messages.map((message) => {
+                return new HttpResponseMessage().deserialize(message);
+            });
+
+        return this;
+    }
 }
 
 export const enum HttpResponseStatus {
-  SUCCESS = "success",
-  FAIL = "fail",
-  ERROR = "error"
+    SUCCESS = "success",
+    FAIL = "fail",
+    ERROR = "error"
 }
 
 export class HttpResponseMessage implements Deserializable {
-  private _severity: HttpResponseMessageSeverity;
-  private message: string;
+    private _severity: HttpResponseMessageSeverity;
+    private message: string;
 
-  /**
-   * @param severity
-   * @param message
-   */
-  public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
-    this._severity = severity;
-    this.message = message;
-  }
+    /**
+     * @param severity severity of the http-response message
+     * @param message text of the message
+     */
+    public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
+        this._severity = severity;
+        this.message = message;
+    }
 
-  public deserialize(input: any): this {
-    Object.assign(this, input);
-    return this;
-  }
+    /**
+     * deserialize the message
+     * @param input input to deserialize
+     */
+    public deserialize(input: any): this {
+        Object.assign(this, input);
+        return this;
+    }
 
-  get severity(): HttpResponseMessageSeverity {
-    return this._severity;
-  }
+    get severity(): HttpResponseMessageSeverity {
+        return this._severity;
+    }
 }
 
 export const enum HttpResponseMessageSeverity {
-  SUCCESS = "success",
-  WARNING = "warning",
-  DANGER = "danger",
-  INFO = "primary"
+    SUCCESS = "success",
+    WARNING = "warning",
+    DANGER = "danger",
+    INFO = "primary"
 }
