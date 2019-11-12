@@ -43,8 +43,8 @@ export abstract class AbstractModel<Entity extends AbstractModel<Entity>> {
   }
 
   /**
-   * compares two models
-   * @param other
+   * Compares two models.
+   * @param other other entity to compare
    */
   public equals(other: Entity) {
     return this.id === other.id;

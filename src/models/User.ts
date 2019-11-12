@@ -138,8 +138,8 @@ export class User extends AbstractModel<User> implements Deserializable, UserInt
      */
     get recipient(): { address: string; name: string } {
         return {
-            name: this.fullName,
-            address: this.email
+            address: this.email,
+            name: this.fullName
         };
     }
 
@@ -159,10 +159,10 @@ export class User extends AbstractModel<User> implements Deserializable, UserInt
     }
 
     /**
-     * validates the password reset token
-     * check if the passed token matches with the stored token
-     * checks it the token is still valid
-     * @param resetToken
+     * Validates the password reset token.
+     * Check if the passed token matches with the stored token.
+     * Checks it the token is still valid.
+     * @param resetToken reset-token to validate
      */
     public validatePasswordResetToken(resetToken: number): boolean {
         return (!(moment().isAfter(this.resetcodeValidUntil)) && this.resetcode === resetToken);
