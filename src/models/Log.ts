@@ -1,8 +1,8 @@
-import { UserInterface } from "../interfaces/UserInterface";
+import { IUserInterface } from "../interfaces/IUserInterface";
 import { AbstractModel } from "./AbstractModel";
 import { User } from "./User";
 
-export class Log extends AbstractModel<Log> implements UserInterface {
+export class Log extends AbstractModel<Log> implements IUserInterface {
   private _logger: string;
   private _level: string;
   private _method: string;

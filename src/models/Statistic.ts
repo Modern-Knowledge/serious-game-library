@@ -1,9 +1,8 @@
-import { Deserializable } from '../interfaces/Deserializable';
-import { AbstractModel } from './AbstractModel';
-import { Errortext } from './Errortext';
+import { IDeserializable } from "../interfaces/IDeserializable";
+import { AbstractModel } from "./AbstractModel";
+import { Errortext } from "./Errortext";
 
-export class Statistic extends AbstractModel<Statistic>
-  implements Deserializable {
+export class Statistic extends AbstractModel<Statistic> implements IDeserializable {
   private _startTime: Date;
   private _endTime: Date;
 

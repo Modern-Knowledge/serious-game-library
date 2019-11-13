@@ -1,9 +1,9 @@
 
-import { Deserializable } from "../interfaces/Deserializable";
-import { UserInterface } from "../interfaces/UserInterface";
+import { IDeserializable } from "../interfaces/IDeserializable";
+import { IUserInterface } from "../interfaces/IUserInterface";
 import { AbstractModel } from "./AbstractModel";
 
-export class PatientSetting extends AbstractModel<PatientSetting> implements Deserializable, UserInterface {
+export class PatientSetting extends AbstractModel<PatientSetting> implements IDeserializable, IUserInterface {
   private _neglect: boolean;
   private _patientId: number;
 

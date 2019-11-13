@@ -1,8 +1,8 @@
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { Patient } from "./Patient";
 import { User } from "./User";
 
-export class Therapist extends User implements Deserializable {
+export class Therapist extends User implements IDeserializable {
   private _patients: Patient[] = [];
   private _role: number;
   private _accepted: boolean;

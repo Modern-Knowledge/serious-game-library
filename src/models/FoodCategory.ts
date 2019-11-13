@@ -1,9 +1,8 @@
 
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { AbstractModel } from "./AbstractModel";
 
-export class FoodCategory extends AbstractModel<FoodCategory>
-  implements Deserializable {
+export class FoodCategory extends AbstractModel<FoodCategory> implements IDeserializable {
   private _name: string;
 
   public constructor() {

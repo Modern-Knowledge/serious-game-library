@@ -1,8 +1,8 @@
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { PatientSetting } from "./PatientSetting";
 import { User } from "./User";
 
-export class Patient extends User implements Deserializable {
+export class Patient extends User implements IDeserializable {
   private _birthday: Date;
   private _info: string;
 

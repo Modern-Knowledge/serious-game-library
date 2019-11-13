@@ -1,11 +1,12 @@
+
 import moment from "moment";
 import { Gender } from "../enums/Gender";
-import { Deserializable } from "../interfaces/Deserializable";
-import { UserInterface } from "../interfaces/UserInterface";
+import { IDeserializable } from "../interfaces/IDeserializable";
+import { IUserInterface } from "../interfaces/IUserInterface";
 import { AbstractModel } from "./AbstractModel";
 import { Session } from "./Session";
 
-export class User extends AbstractModel<User> implements Deserializable, UserInterface {
+export class User extends AbstractModel<User> implements IDeserializable, IUserInterface {
     private _email: string;
     private _password: string;
     private _forename: string;

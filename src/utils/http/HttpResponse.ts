@@ -1,11 +1,11 @@
 
-import { Deserializable } from "../../interfaces/Deserializable";
+import { IDeserializable } from "../../interfaces/IDeserializable";
 import { Patient } from "../../models/Patient";
 
 /**
  * https://github.com/omniti-labs/jsend
  */
-export class HttpResponse implements Deserializable {
+export class HttpResponse implements IDeserializable {
 
     public get messages() {
         return this._messages;
@@ -64,7 +64,7 @@ export const enum HttpResponseStatus {
     ERROR = "error"
 }
 
-export class HttpResponseMessage implements Deserializable {
+export class HttpResponseMessage implements IDeserializable {
     private _severity: HttpResponseMessageSeverity;
     private message: string;
 

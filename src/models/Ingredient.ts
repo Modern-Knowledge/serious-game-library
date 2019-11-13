@@ -1,11 +1,10 @@
 
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { AbstractModel } from "./AbstractModel";
 import { FoodCategory } from "./FoodCategory";
 import { Image } from "./Image";
 
-export class Ingredient extends AbstractModel<Ingredient>
-  implements Deserializable {
+export class Ingredient extends AbstractModel<Ingredient> implements IDeserializable {
   private _name: string;
   private _imageId: number;
   private _foodCategoryId: number;

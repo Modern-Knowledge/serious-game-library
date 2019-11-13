@@ -1,7 +1,7 @@
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { AbstractModel } from "./AbstractModel";
 
-export class Image extends AbstractModel<Image> implements Deserializable {
+export class Image extends AbstractModel<Image> implements IDeserializable {
   private _image: any;
 
   public constructor() {

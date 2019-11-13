@@ -1,5 +1,6 @@
-import { Deserializable } from "../interfaces/Deserializable";
-import { UserInterface } from "../interfaces/UserInterface";
+
+import { IDeserializable } from "../interfaces/IDeserializable";
+import { IUserInterface } from "../interfaces/IUserInterface";
 import { AbstractModel } from "./AbstractModel";
 import { Game } from "./Game";
 import { GameSetting } from "./GameSetting";
@@ -7,8 +8,7 @@ import { Patient } from "./Patient";
 import { Statistic } from "./Statistic";
 import { Therapist } from "./Therapist";
 
-export class Session extends AbstractModel<Session>
-  implements Deserializable, UserInterface {
+export class Session extends AbstractModel<Session> implements IDeserializable, IUserInterface {
   private _gameId: number;
   private _patientId: number;
   private _statisticId: number;

@@ -1,11 +1,11 @@
 
 import { Mealtimes } from "../enums/Mealtimes";
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { AbstractModel } from "./AbstractModel";
 import { Difficulty } from "./Difficulty";
 import { Ingredient } from "./Ingredient";
 
-export class Recipe extends AbstractModel<Recipe> implements Deserializable {
+export class Recipe extends AbstractModel<Recipe> implements IDeserializable {
   private _name: string;
   private _description: string;
   private _difficultyId: number;

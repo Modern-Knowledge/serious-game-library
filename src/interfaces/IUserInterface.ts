@@ -3,7 +3,7 @@
  *
  * getUserId: returns the userId of the model
  */
-export interface UserInterface {
+export interface IUserInterface {
     /**
      * returns user id
      */

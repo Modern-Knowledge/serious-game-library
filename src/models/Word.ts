@@ -1,7 +1,7 @@
-import { Deserializable } from "../interfaces/Deserializable";
+import { IDeserializable } from "../interfaces/IDeserializable";
 import { AbstractModel } from "./AbstractModel";
 
-export class Word extends AbstractModel<Word> implements Deserializable {
+export class Word extends AbstractModel<Word> implements IDeserializable {
   private _name: string;
 
   public constructor() {
