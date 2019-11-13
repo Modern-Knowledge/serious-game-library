@@ -14,6 +14,7 @@ export class Statistic extends AbstractModel<Statistic>
   }
 
   public deserialize(input: any) {
+    Object.assign(this, input);
     if (input && input._startTime) {
       this._startTime = new Date(input._startTime);
     }
