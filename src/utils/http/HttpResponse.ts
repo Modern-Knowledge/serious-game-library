@@ -67,14 +67,16 @@ export const enum HttpResponseStatus {
 export class HttpResponseMessage implements IDeserializable {
     private _severity: HttpResponseMessageSeverity;
     private message: string;
+    private _visible: boolean;
 
     /**
      * @param severity severity of the http-response message
      * @param message text of the message
      */
-    public constructor(severity?: HttpResponseMessageSeverity, message?: string) {
+    public constructor(severity?: HttpResponseMessageSeverity, message?: string, visible: boolean = false) {
         this._severity = severity;
         this.message = message;
+        this._visible = visible;
     }
 
     /**
@@ -88,6 +90,10 @@ export class HttpResponseMessage implements IDeserializable {
 
     get severity(): HttpResponseMessageSeverity {
         return this._severity;
+    }
+
+    get visible(): boolean {
+        return this._visible;
     }
 }
 
