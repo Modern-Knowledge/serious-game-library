@@ -43,7 +43,6 @@ export class HttpResponse implements IDeserializable {
 
         this._messages = messages;
     }
-    // private readonly version: string = process.env.VERSION;
 
     public deserialize(input: any) {
         Object.assign(this, input);
@@ -72,6 +71,7 @@ export class HttpResponseMessage implements IDeserializable {
     /**
      * @param severity severity of the http-response message
      * @param message text of the message
+     * @param visible describes if the message is visible in the frontend
      */
     public constructor(severity?: HttpResponseMessageSeverity, message?: string, visible: boolean = false) {
         this._severity = severity;
