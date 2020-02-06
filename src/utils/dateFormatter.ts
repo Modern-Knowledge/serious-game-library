@@ -1,5 +1,5 @@
-
 import moment from "moment";
+moment.locale("de");
 
 /**
  * format the passed Date as date time
