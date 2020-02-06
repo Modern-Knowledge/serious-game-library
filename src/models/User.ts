@@ -150,9 +150,11 @@ export class User extends AbstractModel<User> implements IDeserializable, IUserI
     get fullNameWithSirOrMadam(): string {
         let prefix = "";
 
-        if (this.gender === Gender.MALE) {
+        // tslint:disable-next-line:triple-equals
+        if (this.gender == Gender.MALE) {
             prefix = "Herr ";
-        } else if (this.gender === Gender.FEMALE) {
+            // tslint:disable-next-line:triple-equals
+        } else if (this.gender == Gender.FEMALE) {
             prefix = "Frau ";
         }
 
