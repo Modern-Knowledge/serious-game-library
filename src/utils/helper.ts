@@ -13,3 +13,17 @@ export function toMap(texts: Text[]): Map<string, Text> {
 
     return map;
 }
+
+/**
+ * Returns true if the app is running in production-mode.
+ */
+export function inProduction(): boolean {
+    return process.env.NODE_ENV === "production";
+}
+
+/**
+ * Returns true if the app is running in test-mode.
+ */
+export function inTestMode(): boolean {
+    return process.env.NODE_ENV === "test";
+}

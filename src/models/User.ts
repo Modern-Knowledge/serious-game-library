@@ -3,6 +3,7 @@ import moment from "moment";
 import { Gender } from "../enums/Gender";
 import { IDeserializable } from "../interfaces/IDeserializable";
 import { IUserInterface } from "../interfaces/IUserInterface";
+import {inTestMode} from "../utils/helper";
 import { AbstractModel } from "./AbstractModel";
 import { Session } from "./Session";
 
@@ -177,7 +178,9 @@ export class User extends AbstractModel<User> implements IDeserializable, IUserI
     public toJSON() {
         const user = this;
 
-        delete user._password;
+        if (!inTestMode()) {
+            delete user._password;
+        }
 
         return user;
     }
