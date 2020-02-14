@@ -176,7 +176,6 @@ export class User extends AbstractModel<User> implements IDeserializable, IUserI
      */
     public toJSON() {
         const user = this;
-        delete user._password;
 
         return user;
     }
