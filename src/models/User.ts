@@ -171,12 +171,12 @@ export class User extends AbstractModel<User> implements IDeserializable, IUserI
         return (!(moment().isAfter(this.resetcodeValidUntil)) && this.resetcode === resetToken);
     }
 
-    /**
-     * Delete the password property, when converting the
-     */
-    public toJSON() {
-        const user = this;
-
-        return user;
-    }
+    // /**
+    //  * Delete the password property, when converting the
+    //  */
+    // public toJSON() {
+    //     const user = this;
+    //
+    //     return user;
+    // }
 }
