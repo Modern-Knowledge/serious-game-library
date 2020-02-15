@@ -1,0 +1,37 @@
+import {User} from "../User";
+
+export class UserDto {
+    private _id: number;
+    private _email: string;
+    private _forename: string;
+    private _lastname: string;
+    private _gender: number;
+
+    public constructor(user: User) {
+        this._id = user.id;
+        this._email = user.email;
+        this._forename = user.forename;
+        this._lastname = user.lastname;
+        this._gender = user.gender;
+    }
+
+    get id(): number {
+        return this._id;
+    }
+
+    get email(): string {
+        return this._email;
+    }
+
+    get forename(): string {
+        return this._forename;
+    }
+
+    get lastname(): string {
+        return this._lastname;
+    }
+
+    get gender(): number {
+        return this._gender;
+    }
+}
