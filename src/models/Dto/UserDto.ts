@@ -1,6 +1,7 @@
+import {IDeserializable} from "../../interfaces/IDeserializable";
 import {User} from "../User";
 
-export class UserDto {
+export class UserDto implements IDeserializable {
     private _id: number;
     private _email: string;
     private _forename: string;
@@ -13,6 +14,11 @@ export class UserDto {
         this._forename = user.forename;
         this._lastname = user.lastname;
         this._gender = user.gender;
+    }
+
+    public deserialize(input: any): this {
+        Object.assign(this, input);
+        return this;
     }
 
     get id(): number {
