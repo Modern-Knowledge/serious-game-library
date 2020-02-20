@@ -6,7 +6,7 @@ export class PatientSetting extends AbstractModel<PatientSetting>
     implements IDeserializable, IUserInterface {
     private _neglect: boolean;
     private _patientId: number;
-    private _showIntroduction: boolean;
+    private _skipIntroduction: boolean;
 
     public constructor() {
         super();
@@ -25,12 +25,12 @@ export class PatientSetting extends AbstractModel<PatientSetting>
         this._neglect = value;
     }
 
-    get showIntroduction(): boolean {
-        return this._showIntroduction;
+    get skipIntroduction(): boolean {
+        return this._skipIntroduction;
     }
 
-    set showIntroduction(value: boolean) {
-        this._showIntroduction = value;
+    set skipIntroduction(value: boolean) {
+        this._skipIntroduction = value;
     }
 
     get patientId(): number {
