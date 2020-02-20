@@ -1,7 +1,7 @@
-import {IDeserializable} from "../../interfaces/IDeserializable";
-import {Patient} from "../Patient";
-import {PatientSetting} from "../PatientSetting";
-import {UserDto} from "./UserDto";
+import { IDeserializable } from "../../interfaces/IDeserializable";
+import { Patient } from "../Patient";
+import { PatientSetting } from "../PatientSetting";
+import { UserDto } from "./UserDto";
 
 export class PatientDto extends UserDto implements IDeserializable {
     private _birthday: Date;
@@ -19,7 +19,9 @@ export class PatientDto extends UserDto implements IDeserializable {
 
     public deserialize(input: any) {
         Object.assign(this, input);
-        this._patientSetting = new PatientSetting().deserialize(input.patientSetting);
+        this._patientSetting = new PatientSetting().deserialize(
+            input._patientSetting
+        );
         return this;
     }
 
