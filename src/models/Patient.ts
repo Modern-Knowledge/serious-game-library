@@ -14,9 +14,11 @@ export class Patient extends User implements IDeserializable {
 
   public deserialize(input: any) {
     Object.assign(this, input);
-    this.patientSetting = new PatientSetting().deserialize(input.patientSetting);
+        this.patientSetting = new PatientSetting().deserialize(
+            input._patientSetting
+        );
     return this;
-  }
+        );
 
   get birthday(): Date {
     return this._birthday;
