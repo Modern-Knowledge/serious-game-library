@@ -1,6 +1,5 @@
 import {IDeserializable} from "../../interfaces/IDeserializable";
 import {User} from "../User";
-import {Gender} from "../../enums/Gender";
 
 export class UserDto implements IDeserializable {
     private _id: number;
