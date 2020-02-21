@@ -23,4 +23,8 @@ export class TherapistDto extends UserDto implements IDeserializable {
     get patients(): PatientDto[] {
         return this._patients;
     }
+
+    set patients(value: PatientDto[]) {
+        this._patients = value;
+    }
 }
