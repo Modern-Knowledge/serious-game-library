@@ -14,9 +14,11 @@ export class TemplateParser {
     }
 
     /**
-     * replaces the placeholder variables with real values
-     * if variable amount does not match the specified, warnings and errors are printed
+     * Replaces the placeholder variables with real values.
+     * If variable amount does not match the specified, warnings and errors are printed.
+     *
      * @param text string that ist processed
+     * @param params parameters that should be inserted into the text
      */
     public parse(text: string, params?: string[]): string {
         const regexp: RegExp = new RegExp("::(.*?)::", "g");
