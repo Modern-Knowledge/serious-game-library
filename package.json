@@ -34,6 +34,7 @@
     "typescript": "~3.5.2"
   },
   "dependencies": {
+    "ionic-logging-service": "^8.0.0",
     "moment": "^2.24.0"
   }
 }
