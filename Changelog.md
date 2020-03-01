@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Added
+ - Add function to shuffle array items.
+ 
 ## [1.2.0] - 2020-02-21
 ### Added
  - Add dtos for transferring only important data.
