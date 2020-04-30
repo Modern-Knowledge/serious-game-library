@@ -2,3 +2,4 @@ node_modules/
 dist/
 docs/
 .rpt2_cache/
+*.iml
