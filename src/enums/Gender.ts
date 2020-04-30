@@ -1,5 +1,5 @@
 
-export const enum Gender {
+export enum Gender {
     MALE = 1,
     FEMALE = 2,
     UNKNOWN = 3

@@ -57,7 +57,7 @@ export class HttpResponse implements IDeserializable {
     }
 }
 
-export const enum HttpResponseStatus {
+export enum HttpResponseStatus {
     SUCCESS = "success",
     FAIL = "fail",
     ERROR = "error"
@@ -97,7 +97,7 @@ export class HttpResponseMessage implements IDeserializable {
     }
 }
 
-export const enum HttpResponseMessageSeverity {
+export enum HttpResponseMessageSeverity {
     SUCCESS = "success",
     WARNING = "warning",
     DANGER = "danger",
