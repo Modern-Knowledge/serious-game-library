@@ -1,22 +1,21 @@
 # Serious Game Library
 
-Die Bibliothek des Serious Games.
+Library of the serious game.
 
 ## Getting Started
 
 ### Prerequisites
 
-#### NPM installieren:
+#### Install npm
 ```
 $ npm install npm@latest -g
 ```
 
 ### Installing
 
-Um eine lokale Instanz zum laufen zu bringen, müssen folgende Schritte ausgeführt werden:
+To run a locale instance, complete the following steps.
 
-
-#### Dependencies installieren:
+#### Install dependencies
 
 ```
 npm install
